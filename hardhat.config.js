@@ -18,6 +18,8 @@ require("@nomiclabs/hardhat-waffle");
 /**
  * @type import('hardhat/config').HardhatUserConfig
  */
+//the version of solidity matter
+
 module.exports = {
   solidity: "0.8.4",
 };
