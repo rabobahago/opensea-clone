@@ -2,6 +2,7 @@ const { expect } = require("chai");
 const { ethers } = require("hardhat");
 
 describe("NFTMarket", function () {
+  this.timeout(70000);
   it("Should create and execute market sales", async function () {
     const Market = await ethers.getContractFactory("NFTMarket");
     const market = await Market.deploy();
