@@ -12,8 +12,10 @@ contract NFTMarket is ReentrancyGuard {
     Counters.Counter private _itemIds;
     //total number of items ever sold track
     Counters.Counter private _itemsSold;
+
     //set owner address and is mark as payable because users will pay to the owner
     address payable owner;
+
     // price charge for them  to put their NFT in this  market place
     uint256 listingPrice = 0.025 ether;
 
@@ -22,7 +24,7 @@ contract NFTMarket is ReentrancyGuard {
         owner = payable(msg.sender);
     }
 
-    // struct of structure
+    //struct of structure
     struct MarketItem {
         uint256 itemId;
         address nftContract;
@@ -33,7 +35,7 @@ contract NFTMarket is ReentrancyGuard {
         bool sold;
     }
     //a way to access value of item by passing id to it
-    mapping(uint256 => Marketplace) private idMarketItem;
+    mapping(uint256 => MarketItem) private idMarketItem;
     //log message when item is sold
     event MarketItemCreated(
         uint256 indexed itemId,
